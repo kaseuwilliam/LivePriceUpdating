@@ -1,0 +1,25 @@
+﻿S&P 500 Stock Predictor
+
+Team #61 - Members are William Kaseu and Ryan O’Connell.
+
+Our project is an application where a user simply inputs the name of a stock (in the S&P 500) and we predict the price of that stock over the next 3 years,
+ namely December 2020, December 2021 and December 2022. Since each company has different fundamentals (i.e. revenue, costs, etc.), we created a multiple OLS regression where, 
+for each stock, we used the stock price in 2018, total revenue growth year-over-year, net income growth year-over-year, EPS, market cap (in billions), debt-to-equity ratio, 
+free cash flow growth year-over-year, beta, moving average, stock growth rate year-over-year, and the industry as controls in our regression. We then used the stock price in 2019 
+as the independent (outcome) variable. This allowed us to get the linear equation which we could utilize to predict the future stock prices using the weights assigned to the 
+different controls. 
+
+All of the dependent variables, aside from Industry, are standard linear regressors.  Industry acts as a dummy dependent variable used to control for industry-specific impacts of the 
+Coronavirus. We have a method to heavily discount certain stocks depending on their industry (as that will capture the risks, such as the effects of the coronavirus).
+
+We used data from Bloomberg Terminal to get the stock information of the companies and used regular expressions to separate the data; the underlying variables will be read from three 
+separate CSV files, including information on historical stock prices and economic data, and the program will write a fourth file called “StockPredictions.csv” where the outputs of the regression analysis will be written.
+
+William - created the OLS regression using the Apache Math Library, created the StockCharacteristics Class, RegressionAnalysis Class, and Prices Class, along with the respective JUnit Tests for those classes. 
+
+Ryan - collected and cleaned the data from Bloomberg Terminal, created the StockList Class, UserInteraction Class, and Runner Class, along with the respective JUnit Tests for those classes.
+
+We were instructed to include in this file that one of our teammates (Brad Pully) had dropped the course due to the Coronavirus pandemic. 
+As a result, we were unable to create the GUI that we had planned to incorporate in our project. 
+
+GitHub Repository Link: https://github.com/UPenn-CIT599/final-project-s-p-stock-price-simulation.git
